@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Side Hustle Income Calculator — How Much Can You Make with AI?</title>
+    <meta name="description" content="Free AI Side Hustle Income Calculator. Estimate how much you can earn with AI side hustles based on your skills, time, and tools. Personalized results in 30 seconds.">
+    <meta name="keywords" content="ai side hustle calculator, how much can i make with ai, ai income calculator, ai earnings estimator">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0d1117; color: #e6edf3; line-height: 1.6; }
+        .container { max-width: 700px; margin: 0 auto; padding: 40px 20px; }
+        h1 { text-align: center; font-size: 2rem; margin-bottom: 10px; background: linear-gradient(135deg, #58a6ff, #7ee787); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .subtitle { text-align: center; color: #8b949e; margin-bottom: 30px; }
+        .card { background: #161b22; border-radius: 12px; padding: 25px; border: 1px solid #30363d; margin-bottom: 20px; }
+        .field { margin-bottom: 15px; }
+        .field label { display: block; margin-bottom: 6px; color: #7ee787; font-weight: 600; }
+        .field select { width: 100%; padding: 10px; background: #0d1117; border: 1px solid #30363d; border-radius: 8px; color: #e6edf3; font-size: 1rem; }
+        .field input[type="range"] { width: 100%; }
+        .field .value { display: inline-block; background: #238636; padding: 2px 10px; border-radius: 12px; font-size: 0.85rem; margin-left: 10px; }
+        .btn { padding: 14px 28px; background: #238636; color: #fff; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: 700; cursor: pointer; width: 100%; }
+        .btn:hover { background: #2ea043; }
+        .result { background: #161b22; border-radius: 12px; padding: 30px; border: 1px solid #30363d; margin-top: 20px; display: none; }
+        .result.show { display: block; }
+        .result h2 { color: #7ee787; margin-bottom: 15px; }
+        .stat { background: #0d1117; padding: 15px; border-radius: 8px; margin-bottom: 10px; display: flex; justify-content: space-between; }
+        .stat .label { color: #8b949e; }
+        .stat .value { font-size: 1.3rem; font-weight: 700; color: #58a6ff; }
+        .stat .value.green { color: #7ee787; }
+        .stat .value.yellow { color: #d29922; }
+        .promo { background: linear-gradient(135deg, #1a1a2e, #0f3460); border-radius: 12px; padding: 25px; margin-top: 30px; text-align: center; border: 1px solid #30363d; }
+        .promo h3 { color: #58a6ff; margin-bottom: 10px; }
+        .promo p { color: #8b949e; margin-bottom: 15px; }
+        .promo a { display: inline-block; padding: 10px 25px; background: #238636; color: #fff; text-decoration: none; border-radius: 8px; font-weight: 700; margin: 5px; }
+        .promo a.free { background: #1f6feb; }
+        footer { text-align: center; padding: 20px; color: #484f58; }
+        footer a { color: #58a6ff; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AI Side Hustle Income Calculator</h1>
+        <p class="subtitle">How much can you earn with AI? Get a personalized estimate in 30 seconds.</p>
+
+        <div class="card">
+            <div class="field">
+                <label>What's your AI skill level?</label>
+                <select id="skill">
+                    <option value="beginner">Beginner — Just starting with ChatGPT</option>
+                    <option value="intermediate">Intermediate — Use AI regularly</option>
+                    <option value="advanced">Advanced — Power user, know multiple tools</option>
+                    <option value="expert">Expert — Build AI tools, automation, agents</option>
+                </select>
+            </div>
+            <div class="field">
+                <label>How many hours per week can you invest? <span class="value" id="hoursVal">10</span></label>
+                <input type="range" id="hours" min="2" max="40" value="10" oninput="document.getElementById('hoursVal').textContent=this.value">
+            </div>
+            <div class="field">
+                <label>Which side hustle interests you most?</label>
+                <select id="hustle">
+                    <option value="writing">AI Content Writing</option>
+                    <option value="images">AI Image Generation</option>
+                    <option value="social">AI Social Media Management</option>
+                    <option value="products">Digital Products (templates, prompts)</option>
+                    <option value="consulting">AI Consulting</option>
+                    <option value="tutoring">AI Tutoring</option>
+                    <option value="video">AI Video Editing</option>
+                    <option value="seo">AI SEO Services</option>
+                </select>
+            </div>
+            <div class="field">
+                <label>Do you have existing clients or audience?</label>
+                <select id="audience">
+                    <option value="none">No — Starting from zero</option>
+                    <option value="small">Yes — Small network (50+ contacts)</option>
+                    <option value="medium">Yes — Medium network (500+ contacts)</option>
+                    <option value="large">Yes — Large network (5000+ followers)</option>
+                </select>
+            </div>
+            <button class="btn" onclick="calculate()">Calculate My Potential Income</button>
+        </div>
+
+        <div class="result" id="result">
+            <h2>Your AI Side Hustle Income Estimate</h2>
+            <div id="results"></div>
+        </div>
+
+        <div class="promo">
+            <h3>Want the complete guide?</h3>
+            <p>Get the AI Side Hustle Blueprint with 25 proven methods, step-by-step guides, and 50 AI prompts.</p>
+            <a href="https://gumroad.com/l/mtsthb" class="free">Get the Blueprint</a>
+            <a href="https://gumroad.com/l/zdtav" class="free">Get All 7 Products</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>AI Side Hustle Calculator by <a href="https://github.com/2Anton1/ai-access-products">AI Access</a></p>
+        <p><a href="prompt-generator.html">AI Prompt Generator</a> | <a href="https://gumroad.com/l/dasiof">Free AI Tools Catalog</a> | <a href="https://gumroad.com/l/zjxexn">Free ChatGPT Prompts</a></p>
+    </footer>
+
+    <script src="income-calculator.js"></script>
+</body>
+</html>
