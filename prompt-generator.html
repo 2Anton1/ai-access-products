@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free AI Prompt Generator — Create Perfect ChatGPT Prompts Instantly</title>
+    <meta name="description" content="Free AI prompt generator. Create perfect ChatGPT, Claude, and AI prompts in seconds. No signup required. 100+ tested prompt templates.">
+    <meta name="keywords" content="ai prompt generator, chatgpt prompt generator, free ai prompts, prompt builder, ai tools">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0d1117; color: #e6edf3; line-height: 1.6; min-height: 100vh; }
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        h1 { text-align: center; font-size: 2.5rem; margin-bottom: 10px; background: linear-gradient(135deg, #58a6ff, #7ee787); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .subtitle { text-align: center; color: #8b949e; margin-bottom: 40px; font-size: 1.2rem; }
+        .generator { background: #161b22; border-radius: 12px; padding: 30px; border: 1px solid #30363d; margin-bottom: 30px; }
+        .field { margin-bottom: 20px; }
+        .field label { display: block; margin-bottom: 8px; color: #7ee787; font-weight: 600; }
+        .field select, .field textarea, .field input { width: 100%; padding: 12px; background: #0d1117; border: 1px solid #30363d; border-radius: 8px; color: #e6edf3; font-size: 1rem; }
+        .field select:focus, .field textarea:focus, .field input:focus { border-color: #58a6ff; outline: none; }
+        .field textarea { min-height: 80px; resize: vertical; }
+        .btn { padding: 14px 28px; background: #238636; color: #fff; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: 700; cursor: pointer; width: 100%; transition: background 0.2s; }
+        .btn:hover { background: #2ea043; }
+        .result { background: #161b22; border-radius: 12px; padding: 25px; border: 1px solid #30363d; margin-top: 20px; display: none; }
+        .result.show { display: block; }
+        .result pre { white-space: pre-wrap; word-wrap: break-word; background: #0d1117; padding: 20px; border-radius: 8px; border: 1px solid #30363d; color: #7ee787; font-family: 'SF Mono', Monaco, monospace; line-height: 1.8; }
+        .copy-btn { margin-top: 10px; padding: 10px 20px; background: #30363d; color: #e6edf3; border: 1px solid #484f58; border-radius: 6px; cursor: pointer; font-size: 0.9rem; }
+        .copy-btn:hover { background: #484f58; }
+        .promo { background: linear-gradient(135deg, #1a1a2e, #0f3460); border-radius: 12px; padding: 25px; margin-top: 40px; text-align: center; border: 1px solid #30363d; }
+        .promo h2 { color: #58a6ff; margin-bottom: 15px; }
+        .promo p { color: #8b949e; margin-bottom: 20px; }
+        .promo a { display: inline-block; padding: 12px 30px; background: #238636; color: #fff; text-decoration: none; border-radius: 8px; font-weight: 700; margin: 5px; }
+        .promo a:hover { background: #2ea043; }
+        .promo .free { background: #1f6feb; }
+        footer { text-align: center; padding: 30px; color: #484f58; }
+        footer a { color: #58a6ff; }
+        .badges { text-align: center; margin-bottom: 30px; }
+        .badges span { display: inline-block; padding: 5px 15px; background: #161b22; border: 1px solid #30363d; border-radius: 20px; margin: 5px; font-size: 0.85rem; color: #8b949e; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AI Prompt Generator</h1>
+        <p class="subtitle">Create perfect ChatGPT prompts in seconds. Free, no signup.</p>
+        <div class="badges">
+            <span>100+ Templates</span>
+            <span>No Signup</span>
+            <span>Works with ChatGPT, Claude, Gemini</span>
+            <span>Free Forever</span>
+        </div>
+
+        <div class="generator">
+            <div class="field">
+                <label>What do you want to do?</label>
+                <select id="category">
+                    <option value="">-- Choose a category --</option>
+                    <option value="business">Business Strategy</option>
+                    <option value="marketing">Marketing & Sales</option>
+                    <option value="content">Content Creation</option>
+                    <option value="productivity">Productivity</option>
+                    <option value="career">Career & Job Search</option>
+                    <option value="learning">Learning & Research</option>
+                    <option value="writing">Writing & Editing</option>
+                    <option value="email">Email</option>
+                    <option value="meeting">Meeting Notes</option>
+                    <option value="decision">Decision Making</option>
+                </select>
+            </div>
+            <div class="field">
+                <label>Describe your specific task or topic:</label>
+                <textarea id="task" placeholder="e.g., Write a blog post about AI tools for small businesses"></textarea>
+            </div>
+            <div class="field">
+                <label>Target audience (optional):</label>
+                <input id="audience" placeholder="e.g., Small business owners, Students, Developers">
+            </div>
+            <div class="field">
+                <label>Tone (optional):</label>
+                <select id="tone">
+                    <option value="">Default</option>
+                    <option value="professional">Professional</option>
+                    <option value="casual">Casual</option>
+                    <option value="persuasive">Persuasive</option>
+                    <option value="educational">Educational</option>
+                    <option value="humorous">Humorous</option>
+                    <option value="urgent">Urgent</option>
+                </select>
+            </div>
+            <button class="btn" onclick="generatePrompt()">Generate Prompt</button>
+        </div>
+
+        <div class="result" id="result">
+            <label style="color: #7ee787; font-weight: 600; display: block; margin-bottom: 10px;">Your AI Prompt:</label>
+            <pre id="promptOutput"></pre>
+            <button class="copy-btn" onclick="copyPrompt()">Copy to Clipboard</button>
+        </div>
+
+        <div class="promo">
+            <h2>Get 100+ More AI Prompts — FREE</h2>
+            <p>Download our complete collection of 100+ tested ChatGPT prompts for business, marketing, productivity, career, finance, and more.</p>
+            <a href="https://gumroad.com/l/zjxexn" class="free">Download 100+ Prompts (FREE)</a>
+            <a href="https://gumroad.com/l/dasiof" class="free">300+ AI Tools Catalog (FREE)</a>
+            <a href="https://gumroad.com/l/mtsthb">AI Side Hustle Blueprint ($4.99)</a>
+            <a href="https://gumroad.com/l/rqydgy">Notion Life OS ($4.99)</a>
+            <a href="https://gumroad.com/l/zdtav">Complete AI Bundle ($9.99)</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>AI Prompt Generator by <a href="https://github.com/2Anton1/ai-access-products">AI Access</a></p>
+        <p><a href="https://gumroad.com/l/dasiof">Free AI Tools Catalog</a> | <a href="https://gumroad.com/l/zjxexn">Free ChatGPT Prompts</a> | <a href="https://gumroad.com/l/bpzuhh">Free Starter Pack</a></p>
+    </footer>
+
+    <script>
+        const prompts = {
+            business: {
+                template: `Act as a business strategist. Analyze this idea: {TASK}.
+Break down:
+1) Target market size and demographics
+2) Revenue model options (at least 3)
+3) Key competitors and their weaknesses
+4) Biggest risks and how to mitigate them
+5) First 3 action steps to get started
+6) Estimated startup cost
+7) Time to profitability
+
+Tone: {TONE}
+Audience: {AUDIENCE}
+
+Be specific with numbers and examples. Avoid generic advice.`,
+                context: "business strategy analysis"
+            },
+            marketing: {
+                template: `Act as a marketing expert. Create a marketing plan for: {TASK}.
+
+Include:
+1) 5 attention-grabbing headlines/hooks
+2) Target audience analysis: {AUDIENCE}
+3) 3 marketing channels with rationale
+4) Content calendar (first 2 weeks)
+5) Key metrics to track
+6) Budget allocation suggestions
+7) Competitor analysis (3 competitors)
+
+Tone: {TONE}
+
+Make it actionable, not theoretical. Give specific examples.`,
+                context: "marketing strategy"
+            },
+            content: {
+                template: `Write {TASK}.
+
+Requirements:
+- Target audience: {AUDIENCE}
+- Tone: {TONE}
+- Structure: Clear introduction, 3-5 main sections with H2 headers, actionable takeaways, strong conclusion
+- Include specific examples and data points
+- Avoid generic phrases like "in today's fast-paced world"
+- Add a call-to-action at the end
+
+Word count: Appropriate for the topic (not padded).`,
+                context: "content creation"
+            },
+            productivity: {
+                template: `Act as a productivity coach. Help me with: {TASK}.
+
+My situation:
+- Target audience/role: {AUDIENCE}
+- Preferred tone: {TONE}
+
+Create a practical, step-by-step system that I can implement today. Include:
+1) Time-blocking schedule
+2) Priority framework (Eisenhower Matrix)
+3) Distraction elimination plan
+4) Daily/weekly review template
+5) 3 habits to start this week
+
+Make it specific to my situation, not generic advice.`,
+                context: "productivity system"
+            },
+            career: {
+                template: `Act as a career coach. Help me with: {TASK}.
+
+My background: {AUDIENCE}
+Tone: {TONE}
+
+Include:
+1) Specific, actionable steps
+2) Common mistakes to avoid
+3) Scripts/templates I can use immediately
+4) Timeline and milestones
+5) How to measure success
+
+Make it practical and specific to my situation.`,
+                context: "career development"
+            },
+            learning: {
+                template: `Act as a learning expert. I want to learn: {TASK}.
+
+My level: {AUDIENCE} (beginner/intermediate/advanced)
+Preferred style: {TONE}
+
+Create a learning plan:
+1) Prerequisites I need
+2) Core concepts in learning order
+3) Best free resources for each concept
+4) A mini-project for each phase
+5) Self-assessment questions
+6) 7-day quick-start plan
+
+Make it practical and immediately actionable.`,
+                context: "learning plan"
+            },
+            writing: {
+                template: `Act as an expert editor and writing coach.
+
+Task: {TASK}
+Target audience: {AUDIENCE}
+Tone: {TONE}
+
+1) Improve clarity, conciseness, and impact
+2) Fix any grammar or style issues
+3) Make every sentence earn its place
+4) Keep the original voice but make it punchier
+5) Flag any vague language or unsupported claims
+6) Provide the improved version with annotations
+
+Also suggest 3 alternative openings.`,
+                context: "writing improvement"
+            },
+            email: {
+                template: `Act as an email communication expert.
+
+Write an email for: {TASK}
+Recipient: {AUDIENCE}
+Tone: {TONE}
+
+Requirements:
+- Subject line that gets opened (under 50 characters)
+- Opening line that's NOT "I hope this finds you well"
+- Clear, single purpose
+- Under 150 words total
+- Specific call-to-action
+- Professional but human tone
+
+Also provide 2 alternative subject lines.`,
+                context: "email writing"
+            },
+            meeting: {
+                template: `Act as a meeting facilitator and note-taker.
+
+Here are my raw meeting notes: {TASK}
+Meeting type: {AUDIENCE}
+Tone: {TONE}
+
+Organize into:
+1) Meeting summary (3 sentences max)
+2) Key decisions made
+3) Action items (with owners and due dates)
+4) Open questions
+5) Topics for next meeting
+6) Follow-up email draft
+
+Make it clear and scannable.`,
+                context: "meeting notes"
+            },
+            decision: {
+                template: `Act as a decision-making consultant.
+
+Decision needed: {TASK}
+Context: {AUDIENCE}
+Tone: {TONE}
+
+Help me decide:
+1) Frame the decision clearly
+2) List all options (at least 3)
+3) Create a weighted decision matrix (7 criteria)
+4) Identify risks for each option
+5) Recommend the best option with rationale
+6) Suggest a test before full commitment
+
+Be objective and data-driven.`,
+                context: "decision making"
+            }
+        };
+
+        function generatePrompt() {
+            const category = document.getElementById('category').value;
+            const task = document.getElementById('task').value.trim();
+            const audience = document.getElementById('audience').value.trim() || 'General audience';
+            const tone = document.getElementById('tone').value || 'Professional';
+
+            if (!category) { alert('Please choose a category'); return; }
+            if (!task) { alert('Please describe your task'); return; }
+
+            const p = prompts[category];
+            let prompt = p.template
+                .replace('{TASK}', task)
+                .replace('{AUDIENCE}', audience)
+                .replace('{TONE}', tone);
+
+            document.getElementById('promptOutput').textContent = prompt;
+            document.getElementById('result').classList.add('show');
+        }
+
+        function copyPrompt() {
+            const text = document.getElementById('promptOutput').textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                btn.textContent = 'Copied!';
+                setTimeout(() => btn.textContent = 'Copy to Clipboard', 2000);
+            });
+        }
+    </script>
+</body>
+</html>
