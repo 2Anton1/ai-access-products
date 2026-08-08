@@ -1,0 +1,19 @@
+name: Daily SEO Ping
+on:
+  schedule:
+    - cron: '0 12 * * *'
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping search engines
+        run: |
+          # Submit sitemap to Google
+          curl -s "https://www.google.com/ping?sitemap=https://2anton1.github.io/ai-access-products/sitemap.xml" || true
+          
+          # Submit to Bing
+          curl -s "https://www.bing.com/ping?sitemap=https://2anton1.github.io/ai-access-products/sitemap.xml" || true
+          
+          echo "SEO ping complete"
