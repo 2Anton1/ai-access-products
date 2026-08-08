@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://2anton1.github.io/ai-access-products/sitemap.xml
