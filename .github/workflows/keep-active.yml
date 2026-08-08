@@ -1,0 +1,21 @@
+name: Keep Repo Active
+on:
+  schedule:
+    - cron: '0 9 */3 * *'
+  workflow_dispatch:
+jobs:
+  activity:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create activity issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const date = new Date().toISOString().split('T')[0];
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Daily Check-In: ${date}`,
+              labels: ['activity'],
+              body: `Automated check-in to keep this repo active and indexed.\n\nFree AI products available:\n- [300+ AI Tools Catalog](https://gumroad.com/l/dasiof)\n- [100+ ChatGPT Prompts](https://gumroad.com/l/zjxexn)\n- [Notion Life OS](https://gumroad.com/l/rqydgy)\n- [AI Side Hustle Blueprint](https://gumroad.com/l/mtsthb)\n- [Complete AI Bundle](https://gumroad.com/l/zdtav)`
+            });
