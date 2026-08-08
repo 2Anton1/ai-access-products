@@ -3,150 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Access — Free AI Tools, ChatGPT Prompts & Notion Templates 2026</title>
-    <meta name="description" content="Free AI products: 300+ AI Tools Catalog, 100+ ChatGPT Prompts, Notion Life OS template, AI Side Hustle Blueprint with 25 methods. All free on Gumroad.">
-    <meta name="keywords" content="ai tools, chatgpt prompts, notion templates, ai side hustle, free ai products, make money with ai, productivity tools">
-    <meta property="og:title" content="AI Access — Free AI Tools, Prompts & Templates">
-    <meta property="og:description" content="300+ AI Tools, 100+ ChatGPT Prompts, Notion Life OS, AI Side Hustle Blueprint — all free.">
-    <meta property="og:type" content="website">
+    <title>AI Access — Free AI Prompt Generator, Tools & Templates 2026</title>
+    <meta name="description" content="Free AI Prompt Generator + 300+ AI Tools Catalog + 100+ ChatGPT Prompts + Notion Life OS. All free. No signup required.">
+    <meta name="keywords" content="ai prompt generator, chatgpt prompts, ai tools, notion templates, free ai tools, make money with ai">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0a0a; color: #fff; line-height: 1.6; }
-        .hero { text-align: center; padding: 80px 20px; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); }
-        .hero h1 { font-size: 3rem; margin-bottom: 20px; background: linear-gradient(135deg, #00f5d4, #00bbf9); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero p { font-size: 1.3rem; color: #aaa; max-width: 600px; margin: 0 auto 30px; }
-        .nav { display: flex; justify-content: center; gap: 20px; padding: 20px; background: #1a1a2e; }
-        .nav a { color: #00f5d4; text-decoration: none; padding: 8px 16px; border-radius: 20px; border: 1px solid #333; transition: all 0.3s; }
+        .hero { text-align: center; padding: 60px 20px 40px; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); }
+        .hero h1 { font-size: 2.8rem; margin-bottom: 15px; background: linear-gradient(135deg, #00f5d4, #00bbf9); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 1.2rem; color: #aaa; max-width: 600px; margin: 0 auto 30px; }
+        .hero-cta { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+        .cta { display: inline-block; padding: 14px 35px; text-decoration: none; font-weight: 700; border-radius: 50px; font-size: 1.1rem; transition: transform 0.2s; }
+        .cta-primary { background: linear-gradient(135deg, #00f5d4, #00bbf9); color: #0a0a0a; }
+        .cta-primary:hover { transform: scale(1.05); }
+        .cta-secondary { background: transparent; color: #00f5d4; border: 2px solid #00f5d4; }
+        .tool-banner { background: #1a1a2e; padding: 30px 20px; text-align: center; border-top: 1px solid #30363d; border-bottom: 1px solid #30363d; }
+        .tool-banner h2 { color: #7ee787; font-size: 1.5rem; margin-bottom: 10px; }
+        .tool-banner p { color: #aaa; margin-bottom: 20px; }
+        .tool-banner a { display: inline-block; padding: 12px 30px; background: #238636; color: #fff; text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 1.1rem; }
+        .tool-banner a:hover { background: #2ea043; }
+        .nav { display: flex; justify-content: center; gap: 15px; padding: 20px; background: #1a1a2e; flex-wrap: wrap; }
+        .nav a { color: #00f5d4; text-decoration: none; padding: 8px 16px; border-radius: 20px; border: 1px solid #333; transition: all 0.3s; font-size: 0.95rem; }
         .nav a:hover { background: #00f5d4; color: #0a0a0a; }
-        .cta { display: inline-block; padding: 15px 40px; background: linear-gradient(135deg, #00f5d4, #00bbf9); color: #0a0a0a; text-decoration: none; font-weight: 700; border-radius: 50px; font-size: 1.1rem; transition: transform 0.2s; }
-        .cta:hover { transform: scale(1.05); }
         .products { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
         .products h2 { text-align: center; font-size: 2rem; margin-bottom: 40px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { background: #1a1a1a; border-radius: 16px; padding: 30px; transition: transform 0.2s, box-shadow 0.2s; border: 1px solid #333; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .card { background: #1a1a1a; border-radius: 16px; padding: 25px; transition: transform 0.2s, box-shadow 0.2s; border: 1px solid #333; }
         .card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,245,212,0.1); border-color: #00f5d4; }
-        .card h3 { font-size: 1.3rem; margin-bottom: 10px; color: #00f5d4; }
-        .card p { color: #aaa; margin-bottom: 20px; font-size: 0.95rem; }
-        .card .price { font-size: 1.5rem; font-weight: 700; color: #fff; }
+        .card h3 { font-size: 1.2rem; margin-bottom: 8px; color: #00f5d4; }
+        .card p { color: #aaa; margin-bottom: 15px; font-size: 0.9rem; }
+        .card .price { font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
         .card .badge { display: inline-block; background: #e94560; color: #fff; padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; margin-bottom: 10px; }
-        .card .btn { display: block; text-align: center; padding: 12px 24px; background: #00f5d4; color: #0a0a0a; text-decoration: none; border-radius: 8px; font-weight: 700; margin-top: 15px; }
+        .card .badge.free { background: #238636; }
+        .card .btn { display: block; text-align: center; padding: 10px 20px; background: #00f5d4; color: #0a0a0a; text-decoration: none; border-radius: 8px; font-weight: 700; }
         .card .btn:hover { background: #00bbf9; }
-        .blog { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        .blog h2 { color: #00f5d4; margin-bottom: 20px; }
-        .blog a { color: #00f5d4; }
-        .blog-post { background: #1a1a1a; padding: 20px; border-radius: 12px; margin-bottom: 20px; border: 1px solid #333; }
-        .blog-post h3 { color: #7ee787; margin-bottom: 10px; }
-        .blog-post p { color: #aaa; }
-        footer { text-align: center; padding: 40px 20px; color: #555; }
+        footer { text-align: center; padding: 30px 20px; color: #555; }
         footer a { color: #00f5d4; text-decoration: none; }
     </style>
 </head>
 <body>
     <div class="hero">
         <h1>AI Access</h1>
-        <p>Free AI products: 300+ AI Tools Catalog, 100+ ChatGPT Prompts, Notion Life OS, AI Side Hustle Blueprint, and more.</p>
-        <a href="#products" class="cta">Browse Free Products</a>
+        <p>Free AI Prompt Generator + 300+ AI Tools + 100+ ChatGPT Prompts + Notion Templates. All free, no signup.</p>
+        <div class="hero-cta">
+            <a href="prompt-generator.html" class="cta cta-primary">Try AI Prompt Generator</a>
+            <a href="#products" class="cta cta-secondary">Browse Products</a>
+        </div>
     </div>
-    
+
+    <div class="tool-banner">
+        <h2>New: Free AI Prompt Generator</h2>
+        <p>Generate perfect ChatGPT, Claude, and AI prompts in seconds. 10 categories, 100+ templates, no signup required.</p>
+        <a href="prompt-generator.html">Open Prompt Generator</a>
+    </div>
+
     <div class="nav">
-        <a href="#products">Products</a>
+        <a href="prompt-generator.html">Prompt Generator</a>
         <a href="ai-tools-2026.html">AI Tools Catalog</a>
         <a href="ai-side-hustles.html">AI Side Hustles</a>
-        <a href="https://gumroad.com/l/zdtav">Get All Free</a>
+        <a href="#products">All Products</a>
     </div>
-    
+
     <div class="products" id="products">
-        <h2>All Products — 100% Free</h2>
+        <h2>AI Products</h2>
         <div class="grid">
             <div class="card">
-                <span class="badge">FREE</span>
-                <h3>Complete AI Bundle (7 Products)</h3>
-                <p>Everything: Blueprint + Prompts + Tools + Notion + 3 more. All in one download.</p>
+                <span class="badge free">FREE</span>
+                <h3>AI Prompt Generator</h3>
+                <p>Interactive web tool. Generate perfect AI prompts in 10 categories. No signup, no download.</p>
                 <p class="price">FREE</p>
-                <a href="https://gumroad.com/l/zdtav" class="btn">Get It Free</a>
+                <a href="prompt-generator.html" class="btn">Open Tool</a>
             </div>
             <div class="card">
-                <span class="badge">FREE</span>
+                <span class="badge free">FREE</span>
+                <h3>300+ AI Tools Catalog</h3>
+                <p>300+ AI tools across 15 categories with prices, ratings, and best-use cases.</p>
+                <p class="price">FREE</p>
+                <a href="https://gumroad.com/l/dasiof" class="btn">Download</a>
+            </div>
+            <div class="card">
+                <span class="badge free">FREE</span>
+                <h3>10 AI Prompts Starter Pack</h3>
+                <p>10 prompts that save 10 hours per week. No email required.</p>
+                <p class="price">FREE</p>
+                <a href="https://gumroad.com/l/bpzuhh" class="btn">Download</a>
+            </div>
+            <div class="card">
+                <h3>100+ ChatGPT Prompts</h3>
+                <p>100+ tested prompts for business, marketing, productivity, career, finance, and more.</p>
+                <p class="price">$2.99</p>
+                <a href="https://gumroad.com/l/zjxexn" class="btn">Buy $2.99</a>
+            </div>
+            <div class="card">
                 <h3>AI Side Hustle Blueprint</h3>
                 <p>25 proven ways to make money with AI. Step-by-step guides, 50 prompts, 100+ tools.</p>
-                <p class="price">FREE</p>
-                <a href="https://gumroad.com/l/mtsthb" class="btn">Get It Free</a>
+                <p class="price">$4.99</p>
+                <a href="https://gumroad.com/l/mtsthb" class="btn">Buy $4.99</a>
             </div>
             <div class="card">
-                <span class="badge">FREE</span>
                 <h3>Notion Life OS</h3>
                 <p>15 linked databases, 200+ properties. Complete life management system.</p>
-                <p class="price">FREE</p>
-                <a href="https://gumroad.com/l/rqydgy" class="btn">Get It Free</a>
+                <p class="price">$4.99</p>
+                <a href="https://gumroad.com/l/rqydgy" class="btn">Buy $4.99</a>
             </div>
             <div class="card">
-                <span class="badge">FREE</span>
-                <h3>100+ ChatGPT Prompts</h3>
-                <p>Tested prompts for business, marketing, productivity, career, finance, and more.</p>
-                <p class="price">FREE</p>
-                <a href="https://gumroad.com/l/zjxexn" class="btn">Get It Free</a>
+                <h3>Complete AI Bundle</h3>
+                <p>All 7 AI products in one download. Best value.</p>
+                <p class="price">$9.99</p>
+                <a href="https://gumroad.com/l/zdtav" class="btn">Buy $9.99</a>
             </div>
             <div class="card">
-                <span class="badge">FREE</span>
-                <h3>300+ AI Tools Catalog</h3>
-                <p>300+ AI tools across 15 categories. Prices, ratings, and best-use cases.</p>
-                <p class="price">FREE</p>
-                <a href="https://gumroad.com/l/dasiof" class="btn">Get It Free</a>
-            </div>
-            <div class="card">
-                <span class="badge">FREE</span>
-                <h3>10 AI Prompts Starter Pack</h3>
-                <p>10 prompts that save 10 hours per week. Quick starter pack, no signup required.</p>
-                <p class="price">FREE</p>
-                <a href="https://gumroad.com/l/bpzuhh" class="btn">Get It Free</a>
-            </div>
-            <div class="card">
-                <span class="badge">FREE (German)</span>
-                <h3>StudyFlow AI</h3>
+                <span class="badge free">FREE (DE)</span>
+                <h3>StudyFlow AI (German)</h3>
                 <p>113 KI-Prompts fuer Studenten. Hausarbeiten, Klausuren, Bewerbungen.</p>
-                <p class="price">FREE</p>
-                <a href="https://gumroad.com/l/studyflow-ai" class="btn">Get It Free</a>
+                <p class="price">EUR 1.99</p>
+                <a href="https://gumroad.com/l/studyflow-ai" class="btn">Buy EUR 1.99</a>
             </div>
             <div class="card">
-                <span class="badge">FREE (German)</span>
-                <h3>Notion Semester Organizer</h3>
+                <span class="badge free">FREE (DE)</span>
+                <h3>Notion Semester Organizer (German)</h3>
                 <p>7 Datenbanken, 40+ Properties. Komplettes Studium-System in Notion.</p>
-                <p class="price">FREE</p>
-                <a href="https://gumroad.com/l/vaikgi" class="btn">Get It Free</a>
-            </div>
-            <div class="card">
-                <span class="badge">FREE (German)</span>
-                <h3>Der /ich-Skill</h3>
-                <p>Schreibe mit KI, ohne dass es nach KI klingt. 7 Module, 22 Lektionen.</p>
-                <p class="price">FREE</p>
-                <a href="https://gumroad.com/l/qruzwo" class="btn">Get It Free</a>
-            </div>
-            <div class="card">
-                <span class="badge">FREE (German)</span>
-                <h3>KI fuer Jurist*innen</h3>
-                <p>Claude fuer deutsches Recht. 235 Plugins, 26226 Skills, 302 Testakten.</p>
-                <p class="price">FREE</p>
-                <a href="https://gumroad.com/l/ugarxi" class="btn">Get It Free</a>
+                <p class="price">EUR 1.99</p>
+                <a href="https://gumroad.com/l/vaikgi" class="btn">Buy EUR 1.99</a>
             </div>
         </div>
     </div>
-    
-    <div class="blog">
-        <h2>Articles</h2>
-        <div class="blog-post">
-            <h3><a href="ai-tools-2026.html">300+ AI Tools for Every Task in 2026</a></h3>
-            <p>The most comprehensive AI tools catalog. 300+ tools across 15 categories with prices, ratings, and best-use cases.</p>
-        </div>
-        <div class="blog-post">
-            <h3><a href="ai-side-hustles.html">AI Side Hustles: 25 Proven Ways to Make Money with AI</a></h3>
-            <p>How to use AI tools to earn your first dollar online. Step-by-step guides with income ranges and difficulty levels.</p>
-        </div>
-    </div>
-    
+
     <footer>
-        <p>(c) 2026 AI Access. All rights reserved.</p>
-        <p>Follow <a href="https://twitter.com/uservuc">@uservuc on X</a> for daily AI tips</p>
-        <p>Visit our <a href="https://antonrooftop.gumroad.com">Gumroad Store</a></p>
+        <p>(c) 2026 AI Access</p>
+        <p><a href="https://github.com/2Anton1/ai-access-products">GitHub</a> | <a href="https://twitter.com/uservuc">Twitter/X</a> | <a href="https://antonrooftop.gumroad.com">Gumroad Store</a></p>
     </footer>
 </body>
 </html>
